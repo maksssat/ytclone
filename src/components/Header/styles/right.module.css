@@ -1,0 +1,15 @@
+/* right */
+.right {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  min-width: 225px;
+}
+
+.right .button:not(:last-child) {
+  margin-right: 8px;
+}
+
+.right .button:last-child {
+  margin: 0 10px;
+}
