@@ -1,9 +1,11 @@
 .header {
+  position: relative;
+  height: 56px;
+  max-height: 100vh;
+  padding: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 56px;
-  padding: 0 16px;
 }
 
 .button {
@@ -34,7 +36,7 @@
 }
 
 .country_code {
-  margin: 3px 0 0 4px;
+  margin: 4px 0 0 4px;
   font-size: 10px;
   color: #606060;
   align-self: start;
@@ -44,7 +46,7 @@
 .center {
   display: flex;
   flex: 0 1 728px;
-  max-width: 600px;
+  max-width: 728px;
   margin-left: 74px;
 }
 

@@ -8,7 +8,7 @@
 
 /* roboto-regular - latin_cyrillic */
 @font-face {
-  font-family: "Roboto";
+  font-family: Roboto;
   font-style: normal;
   font-weight: 400;
   src: local(""), url("./fonts/roboto-v30-latin_cyrillic-regular.woff2") format("woff2"),
@@ -18,7 +18,7 @@
 
 /* roboto-500 - latin_cyrillic */
 @font-face {
-  font-family: "Roboto";
+  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   src: local(""), url("./fonts/roboto-v30-latin_cyrillic-500.woff2") format("woff2"),
@@ -26,7 +26,23 @@
       format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+html {
+  scrollbar-color: #606060b0;
+}
+
+html ::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #606060b0;
+}
+
 body {
+  min-height: 100vh;
+  font-size: 16px;
   font-family: Roboto, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
