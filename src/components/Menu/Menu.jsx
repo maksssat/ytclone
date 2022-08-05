@@ -28,8 +28,8 @@ import MenuSecondaryLink from "../MenuSecondaryLink/MenuSecondaryLink";
 
 export default function Menu() {
   return (
-    <nav className={styles.menu}>
-      <ul className={styles.list_main}>
+    <nav className={styles.menu} id="menu">
+      <ul className={styles.list_main} aria-label="Основные ссылки">
         <MenuLink icon={MainIcon} text="Главная" />
         <MenuLink icon={NavigatorIcon} text="Навигатор" />
         <MenuLink icon={ShortsIcon} text="Shorts" />
@@ -42,22 +42,28 @@ export default function Menu() {
         <MenuLink icon={LikesIcon} text="Понравившиеся" />
       </ul>
       <hr className={styles.horizontal_rule} />
-      <h2 className={styles.header}>ПОДПИСКИ</h2>
-      <ul className={styles.list_with_header}>
+      <h2 className={styles.header} id="subscribes">
+        ПОДПИСКИ
+      </h2>
+      <ul className={styles.list_with_header} aria-labelledby="subscribes">
         <MenuLink icon={ReactIcon} text="React" />
         <MenuLink icon={ReduxIcon} text="Redux" />
         <MenuLink icon={WebpackIcon} text="Webpack" />
         <MenuLink icon={MDNIcon} text="MDN" />
       </ul>
       <hr className={styles.horizontal_rule} />
-      <h2 className={styles.header}>НАВИГАТОР</h2>
-      <ul className={styles.list_with_header}>
+      <h2 className={styles.header} id="navigator">
+        НАВИГАТОР
+      </h2>
+      <ul className={styles.list_with_header} aria-labelledby="navigator">
         <MenuLink icon={VideosGamesIcon} text="Видеоигры" />
         <MenuLink icon={SportIcon} text="Спорт" />
       </ul>
       <hr className={styles.horizontal_rule} />
-      <h2 className={styles.header}>ДРУГИЕ ВОЗМОЖНОСТИ</h2>
-      <ul className={styles.list_with_header}>
+      <h2 className={styles.header} id="other">
+        ДРУГИЕ ВОЗМОЖНОСТИ
+      </h2>
+      <ul className={styles.list_with_header} aria-labelledby="other">
         <MenuLink icon={StudioIcon} text="Творческая студия" />
         <MenuLink icon={MusikIcon} text="YouTube Music" />
         <MenuLink icon={YTkidsIcon} text="YouTube Детям" />
