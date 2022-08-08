@@ -11,7 +11,7 @@ export default function SearchForm() {
         <input className={styles.search_input} type="text" placeholder="Введите запрос" />
         <KeyboardIcon className={styles.keyboard_icon} />
       </div>
-      <button className={styles.search_button} type="button" aria-label="Искать">
+      <button className={styles.search_button} type="button" aria-label="Искать" title="Искать">
         <SearchIcon className={styles.button_icon} aria-hidden="true" />
       </button>
     </form>
