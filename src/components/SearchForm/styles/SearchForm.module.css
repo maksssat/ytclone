@@ -16,7 +16,10 @@
 }
 
 .button_icon {
-  composes: button_icon from "../../Header/styles/Header.module.css";
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
 }
 
 .search_input_container .button_icon {
@@ -63,8 +66,16 @@
 .search_button {
   width: 64px;
   padding: 1px 6px;
-  background-color: #f8f8f8;
+  background-color: hsl(0deg 0% 97%);
   border: 1px solid #ccc;
   border-radius: 0 2px 2px 0;
   cursor: pointer;
+}
+
+.search_button:hover {
+  background-color: hsl(0deg 0% 94%);
+}
+
+.search_button:active {
+  background-color: hsl(0deg 0% 91%);
 }
