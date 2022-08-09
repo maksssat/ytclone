@@ -1,0 +1,42 @@
+.button {
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.7s ease-out;
+}
+
+.button:active {
+  background-color: #e7e7e7;
+}
+
+.button:not(:last-child, :only-of-type) {
+  margin-right: 8px;
+}
+
+/* voice search button */
+.button:only-of-type:not(:first-child) {
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  background-color: #f9f9f9;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.button:only-of-type:active {
+  background-color: #e7e7e7;
+}
+
+/* account button */
+.button:last-child:not(:only-of-type) {
+  margin: 0 10px;
+}
+
+.button_icon {
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
