@@ -26,9 +26,21 @@ import { ReactComponent as WebpackIcon } from "./images/webpack.svg";
 import { ReactComponent as MDNIcon } from "./images/mdn.svg";
 import MenuSecondaryLink from "../MenuSecondaryLink/MenuSecondaryLink";
 
-export default function Menu() {
-  return (
-    <nav className={styles.menu} id="menu">
+export default function Menu({ isOpen }) {
+  const shrinked = (
+    <nav className={styles.menu_shrinked} id="menu">
+      <ul className={styles.list_shrinked} aria-label="Основные ссылки">
+        <MenuLink icon={MainIcon} text="Главная" shrinked={true} />
+        <MenuLink icon={NavigatorIcon} text="Навигатор" shrinked={true} />
+        <MenuLink icon={ShortsIcon} text="Shorts" shrinked={true} />
+        <MenuLink icon={SubscribesIcon} text="Подписки" shrinked={true} />
+        <MenuLink icon={LibraryIcon} text="Библиотека" shrinked={true} />
+      </ul>
+    </nav>
+  );
+
+  const expanded = (
+    <nav className={styles.menu_expanded} id="menu">
       <ul className={styles.list_main} aria-label="Основные ссылки">
         <MenuLink icon={MainIcon} text="Главная" />
         <MenuLink icon={NavigatorIcon} text="Навигатор" />
@@ -98,4 +110,7 @@ export default function Menu() {
       </div>
     </nav>
   );
+
+  if (isOpen) return expanded;
+  else return shrinked;
 }

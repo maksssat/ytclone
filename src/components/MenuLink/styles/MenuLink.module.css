@@ -1,13 +1,18 @@
-.item {
+.item_expanded {
   padding: 0 24px;
   height: 40px;
 }
 
-.item:hover {
+.item_shrinked {
+  padding: 16px 0 14px;
+}
+
+.item_shrinked:hover,
+.item_expanded:hover {
   background-color: rgba(0 0 0 / 0.05);
 }
 
-.link {
+.link_expanded {
   display: flex;
   align-items: center;
   width: 100%;
@@ -18,8 +23,21 @@
   text-decoration: none;
 }
 
-.icon {
+.link_shrinked {
+  composes: link_expanded;
+  flex-flow: column;
+  width: 72px;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.icon_expanded {
   height: 24px;
   width: 24px;
   margin: 0 24px 0 0;
+}
+
+.icon_shrinked {
+  composes: icon_expanded;
+  margin: 0 0 6px;
 }

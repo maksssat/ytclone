@@ -2,10 +2,14 @@ import React from "react";
 import styles from "./styles/MenuLink.module.css";
 
 export default function MenuLink(props) {
+  const linkClassName = props.shrinked ? styles.link_shrinked : styles.link_expanded;
+  const itemClassName = props.shrinked ? styles.item_shrinked : styles.item_expanded;
+  const iconClassName = props.shrinked ? styles.icon_shrinked : styles.icon_expanded;
+
   return (
-    <li className={styles.item} title={props.text}>
-      <a href="#" className={styles.link}>
-        <props.icon className={styles.icon} aria-hidden="true" />
+    <li className={itemClassName} title={props.text}>
+      <a href="#" className={linkClassName}>
+        <props.icon className={iconClassName} aria-hidden="true" />
         {props.text}
       </a>
     </li>

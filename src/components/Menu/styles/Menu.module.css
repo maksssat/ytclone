@@ -1,10 +1,16 @@
-.menu {
+.menu_expanded {
   position: absolute;
   top: 100%;
   left: 0;
-  overflow: auto;
+  overflow-y: auto;
   height: calc(100vh - 100%);
   width: 240px;
+}
+
+.menu_shrinked {
+  composes: menu_expanded;
+  width: auto;
+  padding-top: 4px;
 }
 
 .header {
