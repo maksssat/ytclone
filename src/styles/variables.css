@@ -1,0 +1,7 @@
+:root {
+  --primary-text-color: #030303;
+  --secondary-text-color: #606060;
+  --hover-bgcolor-link: rgba(0 0 0 / 0.05);
+  --border: 1px solid rgba(0 0 0 / 0.1);
+  --notification-icon: #909090;
+}
