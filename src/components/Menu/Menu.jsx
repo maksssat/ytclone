@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles/Menu.module.css";
-import MenuLink from "../MenuLink/MenuLink.jsx";
+import MainMenuLink from "../MainMenuLink/MainMenuLink.jsx";
+import MainMenuSecondaryLink from "../MainMenuSecondaryLink/MainMenuSecondaryLink";
 import { ReactComponent as MainIcon } from "./images/main.svg";
 import { ReactComponent as NavigatorIcon } from "./images/navigator.svg";
 import { ReactComponent as ShortsIcon } from "./images/shorts.svg";
@@ -24,17 +25,16 @@ import { ReactComponent as ReactIcon } from "./images/react.svg";
 import { ReactComponent as ReduxIcon } from "./images/redux.svg";
 import { ReactComponent as WebpackIcon } from "./images/webpack.svg";
 import { ReactComponent as MDNIcon } from "./images/mdn.svg";
-import MenuSecondaryLink from "../MenuSecondaryLink/MenuSecondaryLink";
 
 export default function Menu({ isOpen }) {
   const shrinked = (
     <nav className={styles.menu_shrinked} id="menu">
       <ul className={styles.list_shrinked} aria-label="Основные ссылки">
-        <MenuLink icon={MainIcon} text="Главная" shrinked={true} />
-        <MenuLink icon={NavigatorIcon} text="Навигатор" shrinked={true} />
-        <MenuLink icon={ShortsIcon} text="Shorts" shrinked={true} />
-        <MenuLink icon={SubscribesIcon} text="Подписки" shrinked={true} />
-        <MenuLink icon={LibraryIcon} text="Библиотека" shrinked={true} />
+        <MainMenuLink icon={MainIcon} text="Главная" shrinked={true} />
+        <MainMenuLink icon={NavigatorIcon} text="Навигатор" shrinked={true} />
+        <MainMenuLink icon={ShortsIcon} text="Shorts" shrinked={true} />
+        <MainMenuLink icon={SubscribesIcon} text="Подписки" shrinked={true} />
+        <MainMenuLink icon={LibraryIcon} text="Библиотека" shrinked={true} />
       </ul>
     </nav>
   );
@@ -42,68 +42,68 @@ export default function Menu({ isOpen }) {
   const expanded = (
     <nav className={styles.menu_expanded} id="menu">
       <ul className={styles.list_main} aria-label="Основные ссылки">
-        <MenuLink icon={MainIcon} text="Главная" />
-        <MenuLink icon={NavigatorIcon} text="Навигатор" />
-        <MenuLink icon={ShortsIcon} text="Shorts" />
-        <MenuLink icon={SubscribesIcon} text="Подписки" />
+        <MainMenuLink icon={MainIcon} text="Главная" />
+        <MainMenuLink icon={NavigatorIcon} text="Навигатор" />
+        <MainMenuLink icon={ShortsIcon} text="Shorts" />
+        <MainMenuLink icon={SubscribesIcon} text="Подписки" />
         <hr className={styles.horizontal_rule_inner} />
-        <MenuLink icon={LibraryIcon} text="Библиотека" />
-        <MenuLink icon={HistoryIcon} text="История" />
-        <MenuLink icon={YourVideosIcon} text="Ваши видео" />
-        <MenuLink icon={WatchLaterIcon} text="Смотреть позже" />
-        <MenuLink icon={LikesIcon} text="Понравившиеся" />
+        <MainMenuLink icon={LibraryIcon} text="Библиотека" />
+        <MainMenuLink icon={HistoryIcon} text="История" />
+        <MainMenuLink icon={YourVideosIcon} text="Ваши видео" />
+        <MainMenuLink icon={WatchLaterIcon} text="Смотреть позже" />
+        <MainMenuLink icon={LikesIcon} text="Понравившиеся" />
       </ul>
       <hr className={styles.horizontal_rule} />
       <h2 className={styles.header} id="subscribes">
         ПОДПИСКИ
       </h2>
       <ul className={styles.list_with_header} aria-labelledby="subscribes">
-        <MenuLink icon={ReactIcon} text="React" />
-        <MenuLink icon={ReduxIcon} text="Redux" />
-        <MenuLink icon={WebpackIcon} text="Webpack" />
-        <MenuLink icon={MDNIcon} text="MDN" />
+        <MainMenuLink icon={ReactIcon} text="React" />
+        <MainMenuLink icon={ReduxIcon} text="Redux" />
+        <MainMenuLink icon={WebpackIcon} text="Webpack" />
+        <MainMenuLink icon={MDNIcon} text="MDN" />
       </ul>
       <hr className={styles.horizontal_rule} />
       <h2 className={styles.header} id="navigator">
         НАВИГАТОР
       </h2>
       <ul className={styles.list_with_header} aria-labelledby="navigator">
-        <MenuLink icon={VideosGamesIcon} text="Видеоигры" />
-        <MenuLink icon={SportIcon} text="Спорт" />
+        <MainMenuLink icon={VideosGamesIcon} text="Видеоигры" />
+        <MainMenuLink icon={SportIcon} text="Спорт" />
       </ul>
       <hr className={styles.horizontal_rule} />
       <h2 className={styles.header} id="other">
         ДРУГИЕ ВОЗМОЖНОСТИ
       </h2>
       <ul className={styles.list_with_header} aria-labelledby="other">
-        <MenuLink icon={StudioIcon} text="Творческая студия" />
-        <MenuLink icon={MusikIcon} text="YouTube Music" />
-        <MenuLink icon={YTkidsIcon} text="YouTube Детям" />
-        <MenuLink icon={YTTVIcon} text="YouTube TV" />
+        <MainMenuLink icon={StudioIcon} text="Творческая студия" />
+        <MainMenuLink icon={MusikIcon} text="YouTube Music" />
+        <MainMenuLink icon={YTkidsIcon} text="YouTube Детям" />
+        <MainMenuLink icon={YTTVIcon} text="YouTube TV" />
       </ul>
       <hr className={styles.horizontal_rule} />
       <ul className={styles.list_without_header}>
-        <MenuLink icon={SettingIcon} text="Настройки" />
-        <MenuLink icon={ReportIcon} text="Жалобы" />
-        <MenuLink icon={HelpIcon} text="Справка" />
-        <MenuLink icon={FeedbackIcon} text="Отправить отзыв" />
+        <MainMenuLink icon={SettingIcon} text="Настройки" />
+        <MainMenuLink icon={ReportIcon} text="Жалобы" />
+        <MainMenuLink icon={HelpIcon} text="Справка" />
+        <MainMenuLink icon={FeedbackIcon} text="Отправить отзыв" />
       </ul>
       <hr className={styles.horizontal_rule} />
       <ul className={styles.list_secondary}>
-        <MenuSecondaryLink text="О сервисе" />
-        <MenuSecondaryLink text="Прессе" />
-        <MenuSecondaryLink text="Авторские права" />
-        <MenuSecondaryLink text="Связаться с нами" />
-        <MenuSecondaryLink text="Авторам" />
-        <MenuSecondaryLink text="Рекламодателям" />
-        <MenuSecondaryLink text="Разработчикам" />
+        <MainMenuSecondaryLink text="О сервисе" />
+        <MainMenuSecondaryLink text="Прессе" />
+        <MainMenuSecondaryLink text="Авторские права" />
+        <MainMenuSecondaryLink text="Связаться с нами" />
+        <MainMenuSecondaryLink text="Авторам" />
+        <MainMenuSecondaryLink text="Рекламодателям" />
+        <MainMenuSecondaryLink text="Разработчикам" />
       </ul>
       <ul className={styles.list_secondary}>
-        <MenuSecondaryLink text="Условия использования" />
-        <MenuSecondaryLink text="Конфиденциальность" />
-        <MenuSecondaryLink text="Правила и безопасность" />
-        <MenuSecondaryLink text="Как работает YouTube" />
-        <MenuSecondaryLink text="Тестировани новых функций" />
+        <MainMenuSecondaryLink text="Условия использования" />
+        <MainMenuSecondaryLink text="Конфиденциальность" />
+        <MainMenuSecondaryLink text="Правила и безопасность" />
+        <MainMenuSecondaryLink text="Как работает YouTube" />
+        <MainMenuSecondaryLink text="Тестировани новых функций" />
       </ul>
       <div className={styles.copyright} aria-hidden="true">
         © Google LLC

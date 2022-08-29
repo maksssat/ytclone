@@ -1,0 +1,37 @@
+.item {
+  padding: 0 36px 0 16px;
+  height: 40px;
+}
+
+.item_arrow {
+  padding: 0 16px;
+  height: 40px;
+}
+
+.item:hover,
+.item_arrow:hover {
+  background-color: var(--hover-bgcolor-link);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--primary-text-color);
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+  margin: 0 24px 0 0;
+}
+
+.arrow {
+  height: 24px;
+  width: 24px;
+  margin-left: auto;
+}

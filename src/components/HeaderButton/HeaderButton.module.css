@@ -31,7 +31,7 @@
 }
 
 /* account button */
-.button:last-child:not(:only-of-type) {
+.button:last-of-type:not(:only-of-type) {
   margin: 0 10px;
 }
 

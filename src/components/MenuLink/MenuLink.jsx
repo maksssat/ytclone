@@ -1,16 +1,16 @@
 import React from "react";
-import styles from "./styles/MenuLink.module.css";
+import styles from "./MenuLink.module.css";
+import { ReactComponent as ArrowIcon } from "./images/arrow.svg";
 
 export default function MenuLink(props) {
-  const linkClassName = props.shrinked ? styles.link_shrinked : styles.link_expanded;
-  const itemClassName = props.shrinked ? styles.item_shrinked : styles.item_expanded;
-  const iconClassName = props.shrinked ? styles.icon_shrinked : styles.icon_expanded;
+  const itemClass = props.arrow ? styles.item_arrow : styles.item;
 
   return (
-    <li className={itemClassName} title={props.text}>
-      <a href="#" className={linkClassName}>
-        <props.icon className={iconClassName} aria-hidden="true" />
+    <li className={itemClass} title={props.text}>
+      <a href="#" className={styles.link}>
+        <props.icon className={styles.icon} aria-hidden="true" />
         {props.text}
+        {props.arrow ? <ArrowIcon className={styles.arrow} /> : null}
       </a>
     </li>
   );

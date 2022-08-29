@@ -1,0 +1,9 @@
+.menu {
+  position: absolute;
+  top: 85%;
+  right: 133px;
+  padding: 8px 0;
+  list-style: none;
+  border: var(--border);
+  border-top: none;
+}

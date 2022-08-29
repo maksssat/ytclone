@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Menu from "../Menu/Menu";
+import AddVideoMenu from "../AddVideoMenu/AddVideoMenu";
+import HeaderButton from "../HeaderButton/HeaderButton";
+import NotificationsMenu from "../NotificationsMenu/NotificationsMenu";
 import SearchForm from "../SearchForm/SearchForm";
-// import useClientWidth from "../../hooks/useClientWidth/useClientWidth";
+// import useClientWidth from "../../hooks/useClientWidth";
 import styles from "./styles/Header.module.css";
 import { ReactComponent as MenuIcon } from "./images/menu.svg";
 import { ReactComponent as LogoIcon } from "./images/logo.svg";
@@ -9,27 +12,37 @@ import { ReactComponent as VideoIcon } from "./images/video.svg";
 import { ReactComponent as NotificationsIcon } from "./images/notifications.svg";
 import { ReactComponent as PersonIcon } from "./images/person.svg";
 import { ReactComponent as VoiceInputIcon } from "./images/voice-input.svg";
-import { ReactComponent as StartStreamIcon } from "./images/stream.svg";
-import { ReactComponent as AddVideoIcon } from "./images/your_videos.svg";
-import { ReactComponent as SettingsIcon } from "./images/settings.svg";
-import HeaderButton from "../HeaderButton/HeaderButton";
-import MenuLink from "../MenuLink/MenuLink";
+import SettingsMenu from "../SettingsMenu/SettingsMenu";
 
 export default function Header() {
-  const [menuIsOpen, setMenuIsOpen] = useState(true);
+  const [mainMenuIsOpen, setMenuIsOpen] = useState(true);
   const [addVideoMenuIsOpen, setAddVideoMenuIsOpen] = useState(false);
   const [notificationsMenuIsOpen, setNotificationsMenuIsOpen] = useState(false);
+  const [settingsMenuIsOpen, setSettingsMenuIsOpen] = useState(false);
 
   function handleMenuButtonClick() {
-    setMenuIsOpen(!menuIsOpen);
+    setMenuIsOpen(!mainMenuIsOpen);
   }
 
-  function handleAddVideoButtonClick() {
+  function handleAddVideoMenuButtonClick(e) {
+    e.stopPropagation();
+    setNotificationsMenuIsOpen(false);
+    setSettingsMenuIsOpen(false);
     setAddVideoMenuIsOpen(!addVideoMenuIsOpen);
   }
 
-  function handleNotificationsButtonClick() {
+  function handleNotificationsButtonClick(e) {
+    e.stopPropagation();
+    setAddVideoMenuIsOpen(false);
+    setSettingsMenuIsOpen(false);
     setNotificationsMenuIsOpen(!notificationsMenuIsOpen);
+  }
+
+  function handleSettingsMenuClick(e) {
+    e.stopPropagation();
+    setAddVideoMenuIsOpen(false);
+    setNotificationsMenuIsOpen(false);
+    setSettingsMenuIsOpen(!settingsMenuIsOpen);
   }
 
   return (
@@ -46,14 +59,9 @@ export default function Header() {
       </div>
 
       <div className={styles.right}>
-        <HeaderButton icon={VideoIcon} label="Добавить видео" onClick={handleAddVideoButtonClick} />
+        <HeaderButton icon={VideoIcon} label="Добавить видео" onClick={handleAddVideoMenuButtonClick} />
 
-        {addVideoMenuIsOpen === true ? (
-          <ul className={styles.add_video_menu}>
-            <MenuLink icon={AddVideoIcon} text="Добавить видео" shrinked={false} />
-            <MenuLink icon={StartStreamIcon} text="Начать трансляцию" shrinked={false} />
-          </ul>
-        ) : null}
+        <AddVideoMenu isOpen={addVideoMenuIsOpen} setIsOpen={setAddVideoMenuIsOpen} />
 
         <HeaderButton
           icon={NotificationsIcon}
@@ -61,25 +69,13 @@ export default function Header() {
           onClick={handleNotificationsButtonClick}
         />
 
-        {notificationsMenuIsOpen === true ? (
-          <div className={styles.notifications_menu} aria-label="Список уведомлений">
-            <div className={styles.notifications_menu_header}>
-              Уведомления <SettingsIcon className={styles.notifications_menu_header_icon} />
-            </div>
-            <div className={styles.notifications_menu_list}>
-              <NotificationsIcon className={styles.notifications_menu_list_icon} />
-              <p>Здесь пока ничего нет</p>
-              <p>
-                В этом разделе будут собраны уведомления о новых видео на каналах, на которые вы
-                подписаны.
-              </p>
-            </div>
-          </div>
-        ) : null}
+        <NotificationsMenu isOpen={notificationsMenuIsOpen} setIsOpen={setNotificationsMenuIsOpen} />
 
-        <HeaderButton icon={PersonIcon} label="Аккаунт" />
+        <HeaderButton icon={PersonIcon} label="Аккаунт" onClick={handleSettingsMenuClick} />
+
+        <SettingsMenu isOpen={settingsMenuIsOpen} setIsOpen={setSettingsMenuIsOpen} />
       </div>
-      <Menu isOpen={menuIsOpen} />
+      <Menu isOpen={mainMenuIsOpen} />
     </header>
   );
 }

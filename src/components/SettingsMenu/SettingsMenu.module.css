@@ -1,0 +1,42 @@
+.menu {
+  position: absolute;
+  top: 85%;
+  border: var(--border);
+  border-top: none;
+}
+
+.header {
+  display: flex;
+  padding: 16px;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+  margin-right: 16px;
+}
+
+.username {
+  color: var(--primary-text-color);
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.link {
+  display: block;
+  color: #065fd4;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.list {
+  list-style: none;
+  padding: 8px 0;
+}
+
+.horizontal_rule {
+  border: none;
+  border-top: var(--border);
+}
