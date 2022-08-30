@@ -9,7 +9,7 @@
 
 .button:active {
   background-color: #e7e7e7;
-  outline: 1px solid gray;
+  outline: 0.1px solid gray;
 }
 
 .button:not(:last-child, :only-of-type) {

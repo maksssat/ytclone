@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import Menu from "../Menu/Menu";
-import AddVideoMenu from "../AddVideoMenu/AddVideoMenu";
 import HeaderButton from "../HeaderButton/HeaderButton";
-import NotificationsMenu from "../NotificationsMenu/NotificationsMenu";
 import SearchForm from "../SearchForm/SearchForm";
+import AddVideoMenu from "../AddVideoMenu/AddVideoMenu";
+import NotificationsMenu from "../NotificationsMenu/NotificationsMenu";
+import SettingsMenu from "../SettingsMenu/SettingsMenu";
 // import useClientWidth from "../../hooks/useClientWidth";
-import styles from "./styles/Header.module.css";
+import styles from "./Header.module.css";
 import { ReactComponent as MenuIcon } from "./images/menu.svg";
 import { ReactComponent as LogoIcon } from "./images/logo.svg";
 import { ReactComponent as VideoIcon } from "./images/video.svg";
+import { ReactComponent as VideoFilledIcon } from "./images/video_filled.svg";
 import { ReactComponent as NotificationsIcon } from "./images/notifications.svg";
+import { ReactComponent as NotificationsFilledIcon } from "./images/notifications_filled.svg";
 import { ReactComponent as PersonIcon } from "./images/person.svg";
 import { ReactComponent as VoiceInputIcon } from "./images/voice-input.svg";
-import SettingsMenu from "../SettingsMenu/SettingsMenu";
 
 export default function Header() {
   const [mainMenuIsOpen, setMenuIsOpen] = useState(true);
@@ -59,12 +61,16 @@ export default function Header() {
       </div>
 
       <div className={styles.right}>
-        <HeaderButton icon={VideoIcon} label="Добавить видео" onClick={handleAddVideoMenuButtonClick} />
+        <HeaderButton
+          icon={addVideoMenuIsOpen ? VideoFilledIcon : VideoIcon}
+          label="Добавить видео"
+          onClick={handleAddVideoMenuButtonClick}
+        />
 
         <AddVideoMenu isOpen={addVideoMenuIsOpen} setIsOpen={setAddVideoMenuIsOpen} />
 
         <HeaderButton
-          icon={NotificationsIcon}
+          icon={notificationsMenuIsOpen ? NotificationsFilledIcon : NotificationsIcon}
           label="Уведомления"
           onClick={handleNotificationsButtonClick}
         />
