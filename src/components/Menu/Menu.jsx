@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/Menu.module.css";
+import styles from "./Menu.module.css";
 import MainMenuLink from "../MainMenuLink/MainMenuLink.jsx";
 import MainMenuSecondaryLink from "../MainMenuSecondaryLink/MainMenuSecondaryLink";
 import { ReactComponent as MainIcon } from "./images/main.svg";
@@ -14,7 +14,7 @@ import { ReactComponent as LikesIcon } from "./images/likes.svg";
 import { ReactComponent as VideosGamesIcon } from "./images/video_games.svg";
 import { ReactComponent as SportIcon } from "./images/sport.svg";
 import { ReactComponent as StudioIcon } from "./images/studio.svg";
-import { ReactComponent as MusikIcon } from "./images/music.svg";
+import { ReactComponent as MusicIcon } from "./images/music.svg";
 import { ReactComponent as YTkidsIcon } from "./images/YTkids.svg";
 import { ReactComponent as YTTVIcon } from "./images/YTTV.svg";
 import { ReactComponent as SettingIcon } from "./images/settings.svg";
@@ -28,7 +28,7 @@ import { ReactComponent as MDNIcon } from "./images/mdn.svg";
 
 export default function Menu({ isOpen }) {
   const shrinked = (
-    <nav className={styles.menu_shrinked} id="menu">
+    <nav className={styles.menu_shrinked}>
       <ul className={styles.list_shrinked} aria-label="Основные ссылки">
         <MainMenuLink icon={MainIcon} text="Главная" shrinked={true} />
         <MainMenuLink icon={NavigatorIcon} text="Навигатор" shrinked={true} />
@@ -40,7 +40,7 @@ export default function Menu({ isOpen }) {
   );
 
   const expanded = (
-    <nav className={styles.menu_expanded} id="menu">
+    <nav className={styles.menu_expanded}>
       <ul className={styles.list_main} aria-label="Основные ссылки">
         <MainMenuLink icon={MainIcon} text="Главная" />
         <MainMenuLink icon={NavigatorIcon} text="Навигатор" />
@@ -77,7 +77,7 @@ export default function Menu({ isOpen }) {
       </h2>
       <ul className={styles.list_with_header} aria-labelledby="other">
         <MainMenuLink icon={StudioIcon} text="Творческая студия" />
-        <MainMenuLink icon={MusikIcon} text="YouTube Music" />
+        <MainMenuLink icon={MusicIcon} text="YouTube Music" />
         <MainMenuLink icon={YTkidsIcon} text="YouTube Детям" />
         <MainMenuLink icon={YTTVIcon} text="YouTube TV" />
       </ul>
@@ -103,7 +103,7 @@ export default function Menu({ isOpen }) {
         <MainMenuSecondaryLink text="Конфиденциальность" />
         <MainMenuSecondaryLink text="Правила и безопасность" />
         <MainMenuSecondaryLink text="Как работает YouTube" />
-        <MainMenuSecondaryLink text="Тестировани новых функций" />
+        <MainMenuSecondaryLink text="Тестирование новых функций" />
       </ul>
       <div className={styles.copyright} aria-hidden="true">
         © Google LLC

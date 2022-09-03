@@ -2,7 +2,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  overflow-y: auto;
+  overflow-y: scroll;
   height: calc(100vh - 100%);
   width: 240px;
 }
