@@ -4,11 +4,12 @@
   left: 0;
   right: 0;
   height: 56px;
-  max-height: 100vh;
   padding: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
+  background: var(--modal-menu-background);
 }
 
 /* left */

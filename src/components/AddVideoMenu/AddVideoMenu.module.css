@@ -6,4 +6,5 @@
   list-style: none;
   border: var(--border);
   border-top: none;
+  background: var(--modal-menu-background);
 }

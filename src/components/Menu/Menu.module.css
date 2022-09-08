@@ -1,10 +1,10 @@
 .menu_expanded {
-  position: absolute;
-  top: 100%;
-  left: 0;
   overflow-y: scroll;
-  height: calc(100vh - 100%);
+  height: calc(100vh - 56px);
   width: 240px;
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 56px 0 0;
 }
 
 .menu_shrinked {

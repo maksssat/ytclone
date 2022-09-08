@@ -1,0 +1,52 @@
+.card {
+  text-decoration: none;
+  margin: 0 0 40px;
+}
+
+.thumbnail {
+  display: grid;
+  place-items: center;
+  border: var(--border);
+  background: tomato;
+}
+
+.thumbnail::before {
+  content: "";
+  padding-bottom: 56.25%;
+}
+
+.thumbnail_icon {
+  position: absolute;
+}
+
+.info {
+  display: flex;
+  padding: 0 24px 0 0;
+}
+
+.channel_icon {
+  height: 36px;
+  width: 36px;
+  border: var(--border);
+  border-radius: 50%;
+  margin: 12px 12px 0 0;
+}
+
+.text_block {
+  flex: 1;
+}
+
+.video_name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 12px 0 6px;
+  color: var(--primary-text-color);
+}
+
+.small_text {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--secondary-text-color);
+  text-decoration: none;
+}

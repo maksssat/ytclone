@@ -16,14 +16,13 @@ import { ReactComponent as NotificationsFilledIcon } from "./images/notification
 import { ReactComponent as PersonIcon } from "./images/person.svg";
 import { ReactComponent as VoiceInputIcon } from "./images/voice-input.svg";
 
-export default function Header() {
-  const [mainMenuIsOpen, setMenuIsOpen] = useState(true);
+export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
   const [addVideoMenuIsOpen, setAddVideoMenuIsOpen] = useState(false);
   const [notificationsMenuIsOpen, setNotificationsMenuIsOpen] = useState(false);
   const [settingsMenuIsOpen, setSettingsMenuIsOpen] = useState(false);
 
   function handleMenuButtonClick() {
-    setMenuIsOpen(!mainMenuIsOpen);
+    setMainMenuIsOpen(!mainMenuIsOpen);
   }
 
   function handleAddVideoMenuButtonClick(e) {
@@ -81,7 +80,6 @@ export default function Header() {
 
         <SettingsMenu isOpen={settingsMenuIsOpen} setIsOpen={setSettingsMenuIsOpen} />
       </div>
-      <Menu isOpen={mainMenuIsOpen} />
     </header>
   );
 }

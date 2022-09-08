@@ -1,0 +1,6 @@
+.container {
+  display: grid;
+  grid: auto-flow / repeat(4, 1fr);
+  grid-gap: 0 16px;
+  padding: 80px 24px 24px;
+}

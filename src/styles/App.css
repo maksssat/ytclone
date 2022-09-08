@@ -3,3 +3,8 @@
   height: 100vh;
   overflow: hidden;
 }
+
+.wrapper {
+  display: flex;
+  height: 100%;
+}
