@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ytclone/static/css/main.226633d4.css",
-    "main.js": "/ytclone/static/js/main.a4bcbc18.js",
+    "main.css": "/ytclone/static/css/main.e0b08075.css",
+    "main.js": "/ytclone/static/js/main.d101ba4e.js",
     "static/media/roboto-v30-latin_cyrillic-500.woff": "/ytclone/static/media/roboto-v30-latin_cyrillic-500.0ed33928e20de0916ad0.woff",
     "static/media/roboto-v30-latin_cyrillic-regular.woff": "/ytclone/static/media/roboto-v30-latin_cyrillic-regular.f80311e1d67029198330.woff",
     "static/media/roboto-v30-latin_cyrillic-500.woff2": "/ytclone/static/media/roboto-v30-latin_cyrillic-500.f8c0d3b58ab63c872fa1.woff2",
@@ -57,11 +57,11 @@
     "static/media/your_videos.svg": "/ytclone/static/media/your_videos.5d18a375cb7edabae6057c582e7df02d.svg",
     "static/media/menu.svg": "/ytclone/static/media/menu.f47fe382bf50597afafca8869f790fd4.svg",
     "static/media/main.svg": "/ytclone/static/media/main.019d43f11e6ac73b02a1563055078884.svg",
-    "main.226633d4.css.map": "/ytclone/static/css/main.226633d4.css.map",
-    "main.a4bcbc18.js.map": "/ytclone/static/js/main.a4bcbc18.js.map"
+    "main.e0b08075.css.map": "/ytclone/static/css/main.e0b08075.css.map",
+    "main.d101ba4e.js.map": "/ytclone/static/js/main.d101ba4e.js.map"
   },
   "entrypoints": [
-    "static/css/main.226633d4.css",
-    "static/js/main.a4bcbc18.js"
+    "static/css/main.e0b08075.css",
+    "static/js/main.d101ba4e.js"
   ]
 }
