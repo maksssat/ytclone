@@ -8,12 +8,54 @@
 }
 
 .menu_shrinked {
-  composes: menu_expanded;
-  width: auto;
+  height: calc(100vh - 56px);
+  flex: 0 0 auto;
+  margin: 56px 0 0;
   padding-top: 4px;
 }
 
-.header {
+.plug {
+  height: 100vh;
+  flex: 0 0 72px;
+}
+
+.plug::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0 0 0/ 0.5);
+  z-index: 4;
+}
+
+.overflow_menu {
+  composes: menu_expanded;
+  position: absolute;
+  margin: 0;
+  z-index: 5;
+  background: #fff;
+  height: 100vh;
+}
+
+.menu_header {
+  composes: left from "../Header/Header.module.css";
+  padding: 8px 16px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+
+.logo {
+  composes: logo from "../Header/Header.module.css";
+}
+
+.country_code {
+  composes: country_code from "../Header/Header.module.css";
+}
+
+.list_header {
   padding: 16px 24px 8px;
   color: #606060;
   font-size: 14px;

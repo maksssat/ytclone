@@ -25,8 +25,18 @@ import { ReactComponent as ReactIcon } from "./images/react.svg";
 import { ReactComponent as ReduxIcon } from "./images/redux.svg";
 import { ReactComponent as WebpackIcon } from "./images/webpack.svg";
 import { ReactComponent as MDNIcon } from "./images/mdn.svg";
+import { ReactComponent as MenuIcon } from "./images/menu.svg";
+import { ReactComponent as LogoIcon } from "./images/logo.svg";
+import useClientWidth from "../../hooks/useClientWidth";
+import HeaderButton from "../HeaderButton/HeaderButton";
 
-export default function Menu({ isOpen }) {
+export default function Menu({ isOpen, setIsOpen }) {
+  const width = useClientWidth(setIsOpen);
+
+  function handleMenuButtonClick() {
+    setIsOpen(!isOpen);
+  }
+
   const shrinked = (
     <nav className={styles.menu_shrinked}>
       <ul className={styles.list_shrinked} aria-label="Основные ссылки">
@@ -40,7 +50,17 @@ export default function Menu({ isOpen }) {
   );
 
   const expanded = (
-    <nav className={styles.menu_expanded}>
+    <nav
+      className={width === "LARGE" ? styles.menu_expanded : styles.overflow_menu}
+      // aria-modal={width === "MEDIUM" ? true : false}
+    >
+      {width === "MEDIUM" ? (
+        <div className={styles.menu_header}>
+          <HeaderButton icon={MenuIcon} label="Меню" onClick={handleMenuButtonClick} />
+          <LogoIcon className={styles.logo} aria-label="Логотип" />
+          <span className={`${styles.country_code}`}>KZ</span>
+        </div>
+      ) : null}
       <ul className={styles.list_main} aria-label="Основные ссылки">
         <MainMenuLink icon={MainIcon} text="Главная" />
         <MainMenuLink icon={NavigatorIcon} text="Навигатор" />
@@ -54,7 +74,7 @@ export default function Menu({ isOpen }) {
         <MainMenuLink icon={LikesIcon} text="Понравившиеся" />
       </ul>
       <hr className={styles.horizontal_rule} />
-      <h2 className={styles.header} id="subscribes">
+      <h2 className={styles.list_header} id="subscribes">
         ПОДПИСКИ
       </h2>
       <ul className={styles.list_with_header} aria-labelledby="subscribes">
@@ -64,7 +84,7 @@ export default function Menu({ isOpen }) {
         <MainMenuLink icon={MDNIcon} text="MDN" />
       </ul>
       <hr className={styles.horizontal_rule} />
-      <h2 className={styles.header} id="navigator">
+      <h2 className={styles.list_header} id="navigator">
         НАВИГАТОР
       </h2>
       <ul className={styles.list_with_header} aria-labelledby="navigator">
@@ -72,7 +92,7 @@ export default function Menu({ isOpen }) {
         <MainMenuLink icon={SportIcon} text="Спорт" />
       </ul>
       <hr className={styles.horizontal_rule} />
-      <h2 className={styles.header} id="other">
+      <h2 className={styles.list_header} id="other">
         ДРУГИЕ ВОЗМОЖНОСТИ
       </h2>
       <ul className={styles.list_with_header} aria-labelledby="other">
@@ -111,6 +131,13 @@ export default function Menu({ isOpen }) {
     </nav>
   );
 
-  if (isOpen) return expanded;
+  if (isOpen && width === "LARGE") return expanded;
+  else if (isOpen && width === "MEDIUM")
+    return (
+      <>
+        <div className={styles.plug} onClick={handleMenuButtonClick}></div>
+        {expanded}
+      </>
+    );
   else return shrinked;
 }

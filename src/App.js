@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Header setMainMenuIsOpen={setMenuIsOpen} mainMenuIsOpen={menuIsOpen} />
       <div className="wrapper">
-        <Menu isOpen={menuIsOpen} />
+        <Menu isOpen={menuIsOpen} setIsOpen={setMenuIsOpen} />
         <Main />
       </div>
     </div>
