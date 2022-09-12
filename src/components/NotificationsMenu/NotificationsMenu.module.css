@@ -11,7 +11,9 @@
 
 @media (width < 657px) {
   .menu {
-    right: 78px;
+    right: 72px;
+    width: auto;
+    max-width: 480px;
   }
 }
 

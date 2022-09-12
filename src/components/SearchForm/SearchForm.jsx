@@ -1,15 +1,13 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./SearchForm.module.css";
 import { ReactComponent as SearchIcon } from "./images/search.svg";
 import { ReactComponent as KeyboardIcon } from "./images/keyboard.svg";
-import { useRef } from "react";
-import { useEffect } from "react";
 
-export default function SearchForm(props) {
+export default function SearchForm({ isOpen }) {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    inputRef.current.focus();
+    if (isOpen === true) inputRef.current.focus();
   });
 
   return (

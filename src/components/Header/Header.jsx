@@ -109,7 +109,7 @@ export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
     <div className={styles.searchbar}>
       <HeaderButton icon={ArrowIcon} label="Поиск видео" onClick={handleSearchButtonClick} />
       <div className={styles.center}>
-        <SearchForm />
+        <SearchForm isOpen={searchbarIsOpen} />
         <HeaderButton icon={VoiceInputIcon} label="Голосовой поиск" />
       </div>
     </div>
