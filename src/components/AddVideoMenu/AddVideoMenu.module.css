@@ -8,3 +8,9 @@
   border-top: none;
   background: var(--modal-menu-background);
 }
+
+@media (width < 657px) {
+  .menu {
+    right: 125px;
+  }
+}

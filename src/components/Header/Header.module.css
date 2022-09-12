@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right: 8px;
   height: 56px;
   padding: 0 16px;
   display: flex;
@@ -10,6 +10,12 @@
   align-items: center;
   z-index: 2;
   background: var(--modal-menu-background);
+}
+
+@media (width < 657px) {
+  .header {
+    padding: 0 8px;
+  }
 }
 
 /* left */
@@ -46,4 +52,24 @@
   flex-flow: row nowrap;
   justify-content: flex-end;
   min-width: 225px; /* !!! */
+}
+
+@media (width < 657px) {
+  .right {
+    min-width: 0;
+  }
+}
+
+.searchbar {
+  display: flex;
+  padding: 0 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 8px;
+  height: 56px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  background: var(--modal-menu-background);
 }

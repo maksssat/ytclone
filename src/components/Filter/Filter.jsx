@@ -10,14 +10,14 @@ export default function Filter() {
 
   return (
     <div className={styles.container}>
-      {leftArrowIsVisible ? <LeftArrowIcon /> : null}
+      {leftArrowIsVisible ? <LeftArrowIcon className={styles.arrow} /> : null}
       <FilterButton text="Все" />
       <FilterButton text="Все" />
       <FilterButton text="Все" />
       <FilterButton text="Все" />
       <FilterButton text="Все" />
       <FilterButton text="Все" />
-      {rightArrowIsVisible ? <RightArrowIcon /> : null}
+      {rightArrowIsVisible ? <RightArrowIcon className={styles.arrow}/> : null}
     </div>
   );
 }

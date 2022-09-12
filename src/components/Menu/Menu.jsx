@@ -31,9 +31,14 @@ import useClientWidth from "../../hooks/useClientWidth";
 import HeaderButton from "../HeaderButton/HeaderButton";
 
 export default function Menu({ isOpen, setIsOpen }) {
-  const width = useClientWidth(setIsOpen);
+  function resizeHandler(width) {
+    if (width <= 1312) setIsOpen(false);
+    else if (width > 1312) setIsOpen(true);
+  }
 
-  function handleMenuButtonClick() {
+  const width = useClientWidth(resizeHandler);
+
+  function handleMenuButtonClick(e) {
     setIsOpen(!isOpen);
   }
 
@@ -51,10 +56,10 @@ export default function Menu({ isOpen, setIsOpen }) {
 
   const expanded = (
     <nav
-      className={width === "LARGE" ? styles.menu_expanded : styles.overflow_menu}
+      className={width > 1312 ? styles.menu_expanded : styles.overflow_menu}
       // aria-modal={width === "MEDIUM" ? true : false}
     >
-      {width === "MEDIUM" ? (
+      {width <= 1312 ? (
         <div className={styles.menu_header}>
           <HeaderButton icon={MenuIcon} label="Меню" onClick={handleMenuButtonClick} />
           <LogoIcon className={styles.logo} aria-label="Логотип" />
@@ -131,8 +136,8 @@ export default function Menu({ isOpen, setIsOpen }) {
     </nav>
   );
 
-  if (isOpen && width === "LARGE") return expanded;
-  else if (isOpen && width === "MEDIUM")
+  if (isOpen && width > 1312) return expanded;
+  else if (isOpen && width <= 1312)
     return (
       <>
         <div className={styles.plug} onClick={handleMenuButtonClick}></div>

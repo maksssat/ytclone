@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 
-export default function useClientWidth(setIsOpen) {
+export default function useClientWidth(f) {
   const [width, setWidth] = useState(document.documentElement.clientWidth);
   const handleWindowResize = () => {
     setWidth(document.documentElement.clientWidth);
-    if (width <= 1312) setIsOpen(false);
-    else if (width > 1312) setIsOpen(true);
+    if (typeof f === "function") f(width);
   };
 
   useEffect(() => {
@@ -15,6 +14,5 @@ export default function useClientWidth(setIsOpen) {
     };
   });
 
-  if (width > 1312) return "LARGE";
-  else return "MEDIUM";
+  return width;
 }

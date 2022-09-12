@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import Menu from "../Menu/Menu";
+import React, { useState, useRef } from "react";
 import HeaderButton from "../HeaderButton/HeaderButton";
 import SearchForm from "../SearchForm/SearchForm";
 import AddVideoMenu from "../AddVideoMenu/AddVideoMenu";
 import NotificationsMenu from "../NotificationsMenu/NotificationsMenu";
 import SettingsMenu from "../SettingsMenu/SettingsMenu";
-// import useClientWidth from "../../hooks/useClientWidth";
+import useClientWidth from "../../hooks/useClientWidth";
 import styles from "./Header.module.css";
 import { ReactComponent as MenuIcon } from "./images/menu.svg";
 import { ReactComponent as LogoIcon } from "./images/logo.svg";
@@ -15,11 +14,19 @@ import { ReactComponent as NotificationsIcon } from "./images/notifications.svg"
 import { ReactComponent as NotificationsFilledIcon } from "./images/notifications_filled.svg";
 import { ReactComponent as PersonIcon } from "./images/person.svg";
 import { ReactComponent as VoiceInputIcon } from "./images/voice-input.svg";
+import { ReactComponent as SearchIcon } from "./images/search.svg";
+import { ReactComponent as ArrowIcon } from "./images/arrow.svg";
 
 export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
   const [addVideoMenuIsOpen, setAddVideoMenuIsOpen] = useState(false);
   const [notificationsMenuIsOpen, setNotificationsMenuIsOpen] = useState(false);
   const [settingsMenuIsOpen, setSettingsMenuIsOpen] = useState(false);
+  const [searchbarIsOpen, setSearchbarIsOpen] = useState(false);
+
+  function resizeHandler(width) {
+    if (width > 656) setSearchbarIsOpen(false);
+  }
+  const width = useClientWidth(resizeHandler);
 
   function handleMenuButtonClick() {
     setMainMenuIsOpen(!mainMenuIsOpen);
@@ -46,7 +53,11 @@ export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
     setSettingsMenuIsOpen(!settingsMenuIsOpen);
   }
 
-  return (
+  function handleSearchButtonClick() {
+    setSearchbarIsOpen(!searchbarIsOpen);
+  }
+
+  const header = (
     <header className={styles.header}>
       <div className={styles.left}>
         <HeaderButton icon={MenuIcon} label="Меню" onClick={handleMenuButtonClick} />
@@ -54,12 +65,21 @@ export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
         <span className={`${styles.country_code}`}>KZ</span>
       </div>
 
-      <div className={styles.center}>
-        <SearchForm />
-        <HeaderButton icon={VoiceInputIcon} label="Голосовой поиск" />
-      </div>
+      {width > 656 ? (
+        <div className={styles.center}>
+          <SearchForm />
+          <HeaderButton icon={VoiceInputIcon} label="Голосовой поиск" />
+        </div>
+      ) : null}
 
       <div className={styles.right}>
+        {width < 657 ? (
+          <>
+            <HeaderButton icon={SearchIcon} label="Поиск" onClick={handleSearchButtonClick} />
+            {width > 428 ? <HeaderButton icon={VoiceInputIcon} label="Голосовой поиск" /> : null}
+          </>
+        ) : null}
+
         <HeaderButton
           icon={addVideoMenuIsOpen ? VideoFilledIcon : VideoIcon}
           label="Добавить видео"
@@ -68,11 +88,13 @@ export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
 
         <AddVideoMenu isOpen={addVideoMenuIsOpen} setIsOpen={setAddVideoMenuIsOpen} />
 
-        <HeaderButton
-          icon={notificationsMenuIsOpen ? NotificationsFilledIcon : NotificationsIcon}
-          label="Уведомления"
-          onClick={handleNotificationsButtonClick}
-        />
+        {width > 428 ? (
+          <HeaderButton
+            icon={notificationsMenuIsOpen ? NotificationsFilledIcon : NotificationsIcon}
+            label="Уведомления"
+            onClick={handleNotificationsButtonClick}
+          />
+        ) : null}
 
         <NotificationsMenu isOpen={notificationsMenuIsOpen} setIsOpen={setNotificationsMenuIsOpen} />
 
@@ -82,4 +104,17 @@ export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
       </div>
     </header>
   );
+
+  const searchbar = (
+    <div className={styles.searchbar}>
+      <HeaderButton icon={ArrowIcon} label="Поиск видео" onClick={handleSearchButtonClick} />
+      <div className={styles.center}>
+        <SearchForm />
+        <HeaderButton icon={VoiceInputIcon} label="Голосовой поиск" />
+      </div>
+    </div>
+  );
+
+  if (searchbarIsOpen === true && width < 657) return searchbar;
+  else return header;
 }

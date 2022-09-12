@@ -14,9 +14,21 @@
   padding-top: 4px;
 }
 
+@media (width < 792px) {
+  .menu_shrinked {
+    display: none;
+  }
+}
+
 .plug {
   height: 100vh;
   flex: 0 0 72px;
+}
+
+@media (width < 792px) {
+  .plug {
+    flex: none;
+  }
 }
 
 .plug::after {

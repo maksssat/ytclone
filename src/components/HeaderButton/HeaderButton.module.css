@@ -35,6 +35,18 @@
   margin: 0 10px;
 }
 
+@media (width < 657px) {
+  .button:not(:last-child, :only-of-type) {
+    margin: 0;
+  }
+
+  /* main mune button */
+
+  .button:only-of-type:first-child {
+    margin: 0 4px 0 0;
+  }
+}
+
 .button_icon {
   vertical-align: middle;
   width: 24px;

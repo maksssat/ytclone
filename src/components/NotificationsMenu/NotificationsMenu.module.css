@@ -9,6 +9,12 @@
   background: var(--modal-menu-background);
 }
 
+@media (width < 657px) {
+  .menu {
+    right: 78px;
+  }
+}
+
 .header {
   padding: 10px 16px;
   display: flex;
