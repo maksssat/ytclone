@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import HeaderButton from "../HeaderButton/HeaderButton";
 import SearchForm from "../SearchForm/SearchForm";
 import AddVideoMenu from "../AddVideoMenu/AddVideoMenu";
@@ -53,7 +53,8 @@ export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
     setSettingsMenuIsOpen(!settingsMenuIsOpen);
   }
 
-  function handleSearchButtonClick() {
+  function handleSearchButtonClick(e) {
+    e.stopPropagation();
     setSearchbarIsOpen(!searchbarIsOpen);
   }
 
@@ -106,10 +107,10 @@ export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
   );
 
   const searchbar = (
-    <div className={styles.searchbar}>
+    <div className={styles.searchbar} id="searchbar">
       <HeaderButton icon={ArrowIcon} label="Поиск видео" onClick={handleSearchButtonClick} />
       <div className={styles.center}>
-        <SearchForm isOpen={searchbarIsOpen} />
+        <SearchForm isOpen={searchbarIsOpen} setIsOpen={setSearchbarIsOpen} />
         <HeaderButton icon={VoiceInputIcon} label="Голосовой поиск" />
       </div>
     </div>
