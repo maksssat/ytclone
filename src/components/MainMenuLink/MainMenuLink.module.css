@@ -7,6 +7,13 @@
   padding: 16px 0 14px;
 }
 
+@media (width < 792px) {
+  .item_shrinked {
+    padding: 0;
+    
+  }
+}
+
 .item_shrinked:hover,
 .item_expanded:hover {
   background-color: var(--hover-bgcolor-link);
@@ -31,6 +38,12 @@
   line-height: 14px;
 }
 
+@media (width < 792px) {
+  .link_shrinked {
+    font-size: 11px;
+  }
+}
+
 .icon_expanded {
   height: 24px;
   width: 24px;
@@ -40,4 +53,10 @@
 .icon_shrinked {
   composes: icon_expanded;
   margin: 0 0 6px;
+}
+
+@media (width < 792px) {
+  .icon_shrinked {
+    margin: 0;
+  }
 }

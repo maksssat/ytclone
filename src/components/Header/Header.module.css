@@ -12,9 +12,12 @@
   background: var(--modal-menu-background);
 }
 
-@media (width < 657px) {
+@media (width < 792px) {
   .header {
-    padding: 0 8px;
+    padding: 0;
+    box-shadow: 0 4px 2px -2px rgb(0 0 0 / 20%);
+    right: 0;
+    height: 48px;
   }
 }
 
@@ -29,6 +32,12 @@
   width: 90px;
   display: block;
   margin-left: 16px;
+}
+
+@media (width < 792px) {
+  .logo {
+    margin-left: 12px;
+  }
 }
 
 .country_code {

@@ -9,9 +9,9 @@
   background: var(--modal-menu-background);
 }
 
-@media (width < 657px) {
+@media (width < 792px) {
   .menu {
-    right: 72px;
+    right: 68px;
     width: auto;
     max-width: 480px;
   }

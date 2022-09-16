@@ -46,7 +46,7 @@ export default function Menu({ isOpen, setIsOpen }) {
     <nav className={styles.menu_shrinked}>
       <ul className={styles.list_shrinked} aria-label="Основные ссылки">
         <MainMenuLink icon={MainIcon} text="Главная" shrinked={true} />
-        <MainMenuLink icon={NavigatorIcon} text="Навигатор" shrinked={true} />
+        {width > 791 ? <MainMenuLink icon={NavigatorIcon} text="Навигатор" shrinked={true} /> : null}
         <MainMenuLink icon={ShortsIcon} text="Shorts" shrinked={true} />
         <MainMenuLink icon={SubscribesIcon} text="Подписки" shrinked={true} />
         <MainMenuLink icon={LibraryIcon} text="Библиотека" shrinked={true} />

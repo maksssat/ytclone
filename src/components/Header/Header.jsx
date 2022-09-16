@@ -61,12 +61,14 @@ export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
   const header = (
     <header className={styles.header}>
       <div className={styles.left}>
-        <HeaderButton icon={MenuIcon} label="Меню" onClick={handleMenuButtonClick} />
+        {width > 791 ? (
+          <HeaderButton icon={MenuIcon} label="Меню" onClick={handleMenuButtonClick} />
+        ) : null}
         <LogoIcon className={styles.logo} aria-label="Логотип" />
         <span className={`${styles.country_code}`}>KZ</span>
       </div>
 
-      {width > 656 ? (
+      {width > 791 ? (
         <div className={styles.center}>
           <SearchForm />
           <HeaderButton icon={VoiceInputIcon} label="Голосовой поиск" />
@@ -74,18 +76,20 @@ export default function Header({ setMainMenuIsOpen, mainMenuIsOpen }) {
       ) : null}
 
       <div className={styles.right}>
-        {width < 657 ? (
+        {width < 792 ? (
           <>
             <HeaderButton icon={SearchIcon} label="Поиск" onClick={handleSearchButtonClick} />
             {width > 428 ? <HeaderButton icon={VoiceInputIcon} label="Голосовой поиск" /> : null}
           </>
         ) : null}
 
+        {/*    {width > 428 ? ( */}
         <HeaderButton
           icon={addVideoMenuIsOpen ? VideoFilledIcon : VideoIcon}
           label="Добавить видео"
           onClick={handleAddVideoMenuButtonClick}
         />
+        {/*  ) : null} */}
 
         <AddVideoMenu isOpen={addVideoMenuIsOpen} setIsOpen={setAddVideoMenuIsOpen} />
 

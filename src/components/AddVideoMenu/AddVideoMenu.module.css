@@ -9,7 +9,7 @@
   background: var(--modal-menu-background);
 }
 
-@media (428px < width < 657px) {
+@media (428px < width < 792px) {
   .menu {
     right: 112px;
   }
@@ -17,6 +17,6 @@
 
 @media (width < 429px) {
   .menu {
-    right: 72px;
+    right: 65px;
   }
 }
