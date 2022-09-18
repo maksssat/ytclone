@@ -10,13 +10,19 @@
 @media (width < 792px) {
   .item_shrinked {
     padding: 0;
-    
   }
 }
 
 .item_shrinked:hover,
 .item_expanded:hover {
-  background-color: var(--hover-bgcolor-link);
+  background: var(--hover-bgcolor-link);
+}
+
+@media (width < 792px) {
+  .item_shrinked:hover,
+  .item_expanded:hover {
+    background: none;
+  }
 }
 
 .link_expanded {

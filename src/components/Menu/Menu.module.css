@@ -12,6 +12,13 @@
   flex: 0 0 auto;
   margin: 56px 0 0;
   padding-top: 4px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.menu_shrinked::-webkit-scrollbar {
+  display: none;
 }
 
 @media (width < 792px) {
@@ -23,7 +30,7 @@
     margin: 0;
     padding: 5px 0;
     z-index: 1;
-    background: var(--modal-menu-background);
+    background: var(--background);
     border-top: var(--border);
   }
 }
@@ -74,6 +81,7 @@
 .country_code {
   composes: country_code from "../Header/Header.module.css";
 }
+
 @media (width < 792px) {
   .list_shrinked {
     display: flex;
