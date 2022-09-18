@@ -3,7 +3,7 @@
   top: 85%;
   border: var(--border);
   border-top: none;
-  background: var(--modal-menu-background);
+  background: var(--background);
 }
 
 @media (width < 792px) {

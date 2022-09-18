@@ -6,7 +6,7 @@
   list-style: none;
   border: var(--border);
   border-top: none;
-  background: var(--modal-menu-background);
+  background: var(--background);
 }
 
 @media (428px < width < 792px) {
