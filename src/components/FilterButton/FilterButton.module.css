@@ -13,3 +13,19 @@
   cursor: pointer;
   flex: none;
 }
+
+.active_button {
+  height: 32px;
+  min-width: 12px;
+  margin: 12px 12px 12px 0;
+  padding: 0 12px;
+  max-width: 20rem;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 16px;
+  font-size: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  flex: none;
+}
