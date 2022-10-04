@@ -66,21 +66,23 @@ export default function Filter() {
       ) : null}
 
       <FilterButton text="Все" active />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
-      <FilterButton text="Все" />
+      <FilterButton text="Спорт" />
+      <FilterButton text="Наука" />
+      <FilterButton text="Кино" />
+      <FilterButton text="Музыка" />
+      <FilterButton text="Лекции" />
+      <FilterButton text="Программирование" />
+      <FilterButton text="Путешествия" />
+      <FilterButton text="Хоккей" />
+      <FilterButton text="Футбол" />
+      <FilterButton text="Развлечения" />
+      <FilterButton text="Отдых" />
+      <FilterButton text="Ремесла" />
+      <FilterButton text="Видеоигры" />
+      <FilterButton text="Дикая природа" />
+      <FilterButton text="Кулинария" />
+      <FilterButton text="Изобразительное искусство" />
+      <FilterButton text="Дом и ремонт" />
 
       {rightArrowIsVisible ? (
         <button type="button" className={styles.right_arrow_button} onClick={handleRightArrowClick}>
