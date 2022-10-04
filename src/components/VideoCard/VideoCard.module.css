@@ -7,7 +7,7 @@
   display: grid;
   place-items: center;
   border: var(--border);
-  background: tomato;
+  background: rgb(211 211 211);
 }
 
 .thumbnail::before {
